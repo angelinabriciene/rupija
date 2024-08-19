@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RupijaApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RupijaApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(RupijaApplication.class, args);
+    }
 }

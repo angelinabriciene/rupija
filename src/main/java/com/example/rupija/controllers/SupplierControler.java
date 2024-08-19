@@ -26,7 +26,7 @@ public class SupplierControler {
         Optional<Supplier> supplier = supplierService.findById(id);
         if (supplier.isPresent()) {
             return ResponseEntity.ok(supplier.get());
-        }else {
+        } else {
             return ResponseEntity.notFound().build();
         }
     }
@@ -38,7 +38,7 @@ public class SupplierControler {
 
     @GetMapping("/search")
     public Iterable<Supplier> searchSuppliers(@RequestParam String name) {
-        return supplierService.searchSupplierByNaame(name);
+        return supplierService.searchSupplierByName(name);
     }
 
     @PutMapping("/{id}")
@@ -53,7 +53,7 @@ public class SupplierControler {
             updatedSupplier.setSupplierBankAcc(supplierDetails.getSupplierBankAcc());
 
             return ResponseEntity.ok(supplierService.save(updatedSupplier));
-        }else {
+        } else {
             return ResponseEntity.notFound().build();
         }
     }
@@ -61,6 +61,6 @@ public class SupplierControler {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteSupplier(@PathVariable Long id) {
         supplierService.deleteById(id);
-        return  ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build();
     }
 }

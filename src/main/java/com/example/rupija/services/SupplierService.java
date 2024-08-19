@@ -14,19 +14,20 @@ public class SupplierService {
     private SupplierRepository supplierRepository;
 
     public Supplier getSupplierById(Long id) {
-        return supplierRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid supplier id" + id));
+        return supplierRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid supplier id" + id));
     }
 
     public Iterable<Supplier> findAll() {
-        return supplierRepository.findAll();
+        Iterable<Supplier> suppliers = supplierRepository.findAll();
+        suppliers.forEach(supplier -> System.out.println("Supplier: " + supplier));
+        return suppliers;
     }
 
     public Optional<Supplier> findById(Long id) {
         return supplierRepository.findById(id);
     }
 
-    public Iterable<Supplier> searchSupplierByNaame(String name) {
+    public Iterable<Supplier> searchSupplierByName(String name) {
         return supplierRepository.findSupplierByName(name);
     }
 
