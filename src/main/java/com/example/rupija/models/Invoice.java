@@ -23,8 +23,9 @@ public class Invoice {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "tipo_id")
-    private long invoiceTypeId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "tipo_id", nullable = false)
+    private Type type;
 
     @Column(name = "numeris")
     private String invoiceNumber;
@@ -44,4 +45,18 @@ public class Invoice {
 
     @Column(name = "suma_su_pvm")
     private Double sumAfterTax;
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "id=" + id +
+                ", typeId=" + (type != null ? type.getId() : "null") + // Include only the type ID
+                ", invoiceNumber='" + invoiceNumber + '\'' +
+                ", invoiceDate=" + invoiceDate +
+                ", supplierId=" + supplierId +
+                ", sumBeforeTax=" + sumBeforeTax +
+                ", tax=" + tax +
+                ", sumAfterTax=" + sumAfterTax +
+                '}';
+    }
 }
