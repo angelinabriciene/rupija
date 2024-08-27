@@ -12,4 +12,10 @@ public interface InvoiceRepository extends CrudRepository<Invoice, Long> {
             nativeQuery = true
     )
     Iterable<Invoice> findInvoiceByNumber(@Param("name") String name);
+
+    @Query(
+            value = "SELECT * FROM saskaitos WHERE neapmoketa = true",
+            nativeQuery = true
+    )
+    Iterable<Invoice> findUnpaidInvoice();
 }

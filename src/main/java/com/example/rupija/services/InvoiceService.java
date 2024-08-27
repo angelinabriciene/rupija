@@ -31,6 +31,10 @@ public class InvoiceService {
         return invoiceRepository.findInvoiceByNumber(name);
     }
 
+    public Iterable<Invoice> searchUnpaidInvoice() {
+        return invoiceRepository.findUnpaidInvoice();
+    }
+
     public Invoice save(Invoice invoice) {
         return invoiceRepository.save(invoice);
     }
