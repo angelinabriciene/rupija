@@ -47,4 +47,7 @@ public class Invoice {
 
     @Column(name = "neapmoketa")
     private boolean isUnpaid = true;
+
+    @Column(name = "pdf_file_path")
+    private String pdfFilePath;
 }

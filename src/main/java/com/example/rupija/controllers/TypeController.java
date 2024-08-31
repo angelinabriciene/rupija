@@ -11,7 +11,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/tipai")
 
-public class TypeControler {
+public class TypeController {
 
     @Autowired
     private TypeService typeService;

@@ -11,7 +11,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/tiekejai")
 
-public class SupplierControler {
+public class SupplierController {
 
     @Autowired
     private SupplierService supplierService;
