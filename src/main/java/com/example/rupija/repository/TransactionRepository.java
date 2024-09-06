@@ -1,4 +1,4 @@
-package com.example.rupija.repositories;
+package com.example.rupija.repository;
 
 import com.example.rupija.models.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -8,7 +8,6 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-
 @Entity
 @Table(name = "islaidos_grynais")
 @Data

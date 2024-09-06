@@ -1,6 +1,7 @@
 package com.example.rupija.controllers;
 
 import com.example.rupija.models.Transaction;
+import com.example.rupija.repository.TransactionRepository;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import java.nio.file.Path;
 public class FileUploadController {
 
     @Autowired
-    private com.example.rupija.repositories.TransactionRepository transactionRepository;
+    private TransactionRepository transactionRepository;
 
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
